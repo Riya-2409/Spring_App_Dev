@@ -3,6 +3,7 @@ package com.SpringAppDevelopment;
 import com.SpringAppDevelopment.beans.Employee;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.ui.Model;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -43,6 +44,13 @@ public class HelloController {
         Employee employee = context.getBean(Employee.class);
         employee.showEmployeeDetails();
         return "Employee details logged successfully!";
+    }
+
+    //UC2-Hello From Bridgelabz
+    @GetMapping("/uc2")
+    public String hello(Model model) {
+        model.addAttribute("message", "Hello from BridgeLabz");
+        return "hello";
     }
 }
 
